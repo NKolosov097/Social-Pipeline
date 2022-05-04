@@ -1,0 +1,28 @@
+{
+  "name": "ui-social-pipeline",
+  "version": "0.0.1",
+  "description": "web application \"Social Pipeline\"",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'building app'",
+    "test": "echo 'testing in progress...'",
+    "lint": "echo 'linting in progress...'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/social-pipeline/frontend.git"
+  },
+  "keywords": [
+    "social-pipeline",
+    "social",
+    "network",
+    "web",
+    "app"
+  ],
+  "author": "Emelianov D.O.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/social-pipeline/frontend/issues"
+  },
+  "homepage": "https://gitlab.com/social-pipeline/frontend#readme"
+}

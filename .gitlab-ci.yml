@@ -1,0 +1,27 @@
+image: node
+
+stages:
+    - test
+    - deploy
+
+test:
+    stage: test
+    cache:
+      key: build-cache
+      paths:
+        - node_modules/
+    script:
+        - npm install
+        - npm run lint
+        - npm run test
+
+deploy:
+    stage: deploy
+    artifacts:
+      paths:
+        - build/
+      expire_in: 4 week
+    only:
+        - main
+    script:
+        - npm run build

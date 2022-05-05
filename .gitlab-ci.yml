@@ -1,11 +1,12 @@
 image: node
 
 stages:
+    - install
     - test
     - deploy
 
 install: 
-    stage: test
+    stage: install
     cache:
       key: install-cache
       paths:

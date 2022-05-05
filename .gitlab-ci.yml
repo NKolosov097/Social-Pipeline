@@ -4,16 +4,38 @@ stages:
     - test
     - deploy
 
-test:
+install: 
     stage: test
     cache:
-      key: build-cache
+      key: install-cache
       paths:
         - node_modules/
     script:
         - npm install
+
+test:
+    stage: test
+    script:
         - npm run lint
         - npm run test
+    except:
+        - main
+
+
+test-coverage:
+    stage: test
+    cache:
+      key: build-cache
+      paths:
+        - coverage/
+    artifacts:
+      paths:
+        - coverage/
+    script:
+        - npm run lint
+        - npm test -- --coverage
+    only:
+        - main
 
 deploy:
     stage: deploy
@@ -25,3 +47,17 @@ deploy:
         - main
     script:
         - npm run build
+
+pages:
+    stage: deploy
+    dependencies:
+      - test
+    script:
+      - mkdir .public
+      - cp -r coverage/* .public
+      - mv .public public
+    artifacts:
+      paths:
+        - public
+    only:
+      - master

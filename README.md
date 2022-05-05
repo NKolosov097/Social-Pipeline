@@ -1,1 +1,1 @@
-# интерфейс веб приложения "Social Pipeline"
+# интерфейс веб приложения "The Social Pipeline"

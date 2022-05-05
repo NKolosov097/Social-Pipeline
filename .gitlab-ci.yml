@@ -1,58 +1,39 @@
 image: node
 
 stages:
-    - install_dependencies
-    - test
-    - deploy
+    - develop_test
+    - production_deploy
+    - coverage_generator
 
-install: 
-    stage: install_dependencies
-    cache:
-      key: install-cache
-      paths:
-        - node_modules/
+develop:
+    stage: develop_test
     script:
         - npm install
-
-test:
-    stage: test
-    script:
         - npm run lint
         - npm run test
-    except:
-        - main
-
-
-test-coverage:
-    stage: test
-    cache:
-      key: build-cache
-      paths:
-        - coverage/
-    artifacts:
-      paths:
-        - coverage/
-    script:
-        - npm run lint
-        - npm test -- --coverage
     only:
-        - main
+        - develop   
 
-deploy:
-    stage: deploy
+
+production:
+    stage: production_deploy
     artifacts:
       paths:
         - build/
-      expire_in: 4 week
-    only:
-        - main
+        - coverage/
+      expire_in: 1 week
     script:
+        - npm install
+        - npm run lint
+        - npm test -- --coverage
         - npm run build
+    only:
+        - main   
 
 pages:
-    stage: deploy
+    stage: coverage_generator
     dependencies:
-      - test
+      - production
     script:
       - mkdir .public
       - cp -r coverage/* .public

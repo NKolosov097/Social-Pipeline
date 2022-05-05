@@ -1,28 +1,71 @@
 {
-  "name": "ui-social-pipeline",
-  "version": "0.0.1",
+  "name": "frontend",
+  "version": "0.1.0",
   "description": "web application \"Social Pipeline\"",
-  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^4.20.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.5",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
-    "build": "echo 'building app'",
-    "test": "echo 'testing in progress...'",
-    "lint": "echo 'linting in progress...'"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint": "npx eslint ./src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/social-pipeline/frontend.git"
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "react-app",
+      "react-app/jest",
+      "plugin:jsx-a11y/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "import",
+      "react-hooks",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
   },
-  "keywords": [
-    "social-pipeline",
-    "social",
-    "network",
-    "web",
-    "app"
-  ],
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "author": "Emelianov D.O.",
   "license": "MIT",
-  "bugs": {
-    "url": "https://gitlab.com/social-pipeline/frontend/issues"
-  },
-  "homepage": "https://gitlab.com/social-pipeline/frontend#readme"
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
+  }
 }

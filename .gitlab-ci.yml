@@ -1,12 +1,12 @@
 image: node
 
 stages:
-    - install
+    - install_dependencies
     - test
     - deploy
 
 install: 
-    stage: install
+    stage: install_dependencies
     cache:
       key: install-cache
       paths:

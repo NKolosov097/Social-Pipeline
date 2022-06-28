@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}  
+
+h1, h2, h3, h4, h5, h6 {
+    margin:0;
+}
+
+body {
+    background: rgb(200, 200, 200);
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+  
+.container {
+    width: 100%;
+    margin: 5vh auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+

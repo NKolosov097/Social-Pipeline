@@ -5,7 +5,6 @@ import 'antd/dist/antd.css';
 import { Form, Col, Row, Input, Button as ButtonLib, Checkbox } from 'antd';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
-// import Login from './Login.jsx';
 
 const { Title, Paragraph } = Typography;
 const Button = styled(ButtonLib)`

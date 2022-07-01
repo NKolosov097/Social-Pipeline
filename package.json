@@ -4,87 +4,87 @@
     "description": "web application \"Social Pipeline\"",
     "private": true,
     "dependencies": {
-      "@testing-library/jest-dom": "^5.16.4",
-      "@testing-library/react": "^13.2.0",
-      "@testing-library/user-event": "^13.5.0",
-      "antd": "^4.20.2",
-      "react": "^18.1.0",
-      "react-dom": "^18.1.0",
-      "react-scripts": "5.0.1",
-      "styled-components": "^5.3.5",
-      "web-vitals": "^2.1.4"
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.2.0",
+        "@testing-library/user-event": "^13.5.0",
+        "antd": "^4.20.2",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "5.0.1",
+        "styled-components": "^5.3.5",
+        "web-vitals": "^2.1.4"
     },
     "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "lint": "npx eslint ./src"
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "lint": "npx eslint ./src"
     },
     "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "lint-staged": {
-      "*.{js,jsx}": [
-        "prettier --write",
-        "eslint --fix",
-        "git add"
-      ],
-      "*.{html,css}": [
-        "prettier --write",
-        "git add"
-      ]
+        "*.{js,jsx}": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+        ],
+        "*.{html,css}": [
+            "prettier --write",
+            "git add"
+        ]
     },
     "eslintConfig": {
-      "extends": [
-        "eslint:recommended",
-        "react-app",
-        "react-app/jest",
-        "plugin:jsx-a11y/recommended",
-        "prettier"
-      ],
-      "plugins": [
-        "react",
-        "jsx-a11y",
-        "import",
-        "react-hooks",
-        "prettier"
-      ],
-      "rules": {
-        "prettier/prettier": [
-          "error",
-          {
-            "endOfLine": "auto"
-          }
-        ]
-      }
+        "extends": [
+            "eslint:recommended",
+            "react-app",
+            "react-app/jest",
+            "plugin:jsx-a11y/recommended",
+            "prettier"
+        ],
+        "plugins": [
+            "react",
+            "jsx-a11y",
+            "import",
+            "react-hooks",
+            "prettier"
+        ],
+        "rules": {
+            "prettier/prettier": [
+                "error",
+                {
+                    "endOfLine": "auto"
+                }
+            ]
+        }
     },
     "jest": {
-      "transformIgnorePatterns": [
-        "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
-      ]
+        "transformIgnorePatterns": [
+            "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
+        ]
     },
     "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     },
     "author": "Emelianov D.O.",
     "license": "MIT",
     "devDependencies": {
-      "eslint-config-prettier": "^8.5.0",
-      "eslint-plugin-prettier": "^4.0.0",
-      "husky": "^7.0.4",
-      "lint-staged": "^12.4.1",
-      "prettier": "^2.6.2"
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2.6.2"
     }
-  }
-  
+}

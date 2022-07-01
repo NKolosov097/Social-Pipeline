@@ -1,23 +1,22 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import styles from './Css.module.css';
 import styled from 'styled-components';
+import 'antd/dist/antd.css';
 import { Form, Col, Row, Input, Button as ButtonLib, Checkbox } from 'antd';
 import { Typography } from 'antd';
+import { Link } from 'react-router-dom';
+// import Login from './Login.jsx';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 const Button = styled(ButtonLib)`
   bottom: -100px;
   color: #222;
   background: rgb(200, 200, 200);
   border-radius: 10px;
   border: rgb(200, 200, 200);
-
-  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
-    -10px 20px 5px rgba(0, 0, 0, 0.05);
 `;
 
-const App = (props) => {
+const Registration = (props) => {
   const onFinish = (values) => {
     console.log('Success:', values);
   };
@@ -44,7 +43,7 @@ const App = (props) => {
             <Row>
               <Col offset="0" className={styles.info__container}>
                 <Form.Item className={styles.info__item}>
-                  <Title level={1}>Log In</Title>
+                  <Title level={1}>Registration</Title>
                   <Title level={2}>Welcome to the Social Pipeline!</Title>
                 </Form.Item>
               </Col>
@@ -52,7 +51,7 @@ const App = (props) => {
             </Row>
           </Form.Item>
           <Form.Item
-            className={styles.form__aut}
+            className={styles.form__aut__regist}
             name="basic"
             initialValues={{
               remember: true,
@@ -61,6 +60,20 @@ const App = (props) => {
             onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
+            <Form.Item
+              label="Email"
+              name="Email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Email!',
+                },
+              ]}
+            >
+              <Row offset="24">
+                <Input autoComplete="new-email" className={styles.form__input} />
+              </Row>
+            </Form.Item>
             <Form.Item
               label="Username"
               name="username"
@@ -72,7 +85,7 @@ const App = (props) => {
               ]}
             >
               <Row offset="24">
-                <Input autoComplete="new-password" className={styles.form__input} />
+                <Input autoComplete="new-username" className={styles.form__input} />
               </Row>
             </Form.Item>
 
@@ -109,16 +122,16 @@ const App = (props) => {
               <Button
                 size="large"
                 type="text"
-                className={styles.authentication__submit}
+                className={styles.authentication__submit__regist}
                 htmlType="submit"
               >
-                Log In
+                Register
               </Button>
             </Form.Item>
-            <Paragraph className={styles.field__register}>
-              Are you a new user?
+            <Paragraph className={styles.field__register__regist}>
+              Are you already registered?
               <Button className={styles.button__register} type="link">
-                Register
+                <Link to="/login">Log In</Link>
               </Button>
             </Paragraph>
           </Form.Item>
@@ -128,4 +141,4 @@ const App = (props) => {
   );
 };
 
-export default App;
+export default Registration;

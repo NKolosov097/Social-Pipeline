@@ -1,5 +1,6 @@
 /* Total options */
 input {
+    padding: 20px;
     background: transparent !important;
     font-size: 17px !important;
     color: #fff !important;
@@ -86,6 +87,10 @@ button {
     border-radius: 20px;
   }
   
+  .wrapper__input {
+    overflow: hidden;
+  }
+
   .form__input {    
     padding: 14px;
     background: transparent !important;
@@ -156,7 +161,7 @@ button {
     border: none !important;
     text-shadow: none !important;
     margin: 5px 10px;
-    left: 70px;
+    left: 47px;
 
     bottom: -140px !important;
   }
@@ -172,7 +177,7 @@ button {
 
 
   /* Media requests */
-  @media (max-width: 775px ){
+  @media (max-width: 775px){
     .container {
         margin-right: 70px;
     }
@@ -192,8 +197,14 @@ button {
 
     .form__aut {
         left: auto;
-        top: 470px;
+        top: 430px;
         height: 480px;
+    }
+
+    .form__aut__regist {
+        left: auto;
+        top: 430px;
+        height: 550px;
     }
 
     input {
@@ -204,28 +215,22 @@ button {
 }
 
   @media (max-width: 575px) {
-    .wrapper__form {
-        left: 35px !important;
-    }
-
     .form__aut {
         height: 550px;
     }
-}
 
-@media (max-width: 415px) and (max-width: 897px) {
-    .wrapper__form {
-        left: 35px !important;
+    .form__aut__regist {
+        height: 680px;
     }
 }
 
 @media (max-width: 376px) {
-    .wrapper__form {
-        left: 50px !important;
+    .form__aut {
+        top: 430px;
     }
 
-    .form__aut {
-        top: 370px;
+    .form__aut__regist {
+        top: 430px;
     }
 }
 

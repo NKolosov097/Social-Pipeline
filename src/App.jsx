@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import 'antd/dist/antd.css';
 import './index.css';
 
-import Login from './components/authentication/login/Login.js';
-import Registration from './components/authentication/registration/Registration.js';
-import Login2 from './components/authentication/Login2.jsx';
-import Registration2 from './components/authentication/Registration2.jsx';
+import Login from './components/authentication/Login.jsx';
+import Registration from './components/authentication/Registration.jsx';
+// import { Layout } from 'antd';
+
+import { Routes, Route } from 'react-router';
 
 const Wrapper = styled.section`
   display: flex;
@@ -19,12 +20,18 @@ const Wrapper = styled.section`
 
 function App() {
   return (
-    <Wrapper>
-      {/* <Login2></Login2> */}
-      <Registration2></Registration2>
-      {/* <Login></Login>*/}
-      {/* <Registration></Registration> */}
-    </Wrapper>
+    <>
+      <Wrapper>
+        {/* <Login /> */}
+        <Registration />
+      </Wrapper>
+      {/* <BrowserRouter> */}
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route path="registration" element={<Registration />} />
+      </Routes>
+      {/* </BrowserRouter> */}
+    </>
   );
 }
 

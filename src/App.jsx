@@ -5,8 +5,6 @@ import './index.css';
 
 import Login from './components/authentication/Login.jsx';
 import Registration from './components/authentication/Registration.jsx';
-// import { Layout } from 'antd';
-
 import { Routes, Route } from 'react-router';
 
 const Wrapper = styled.section`
@@ -22,15 +20,11 @@ function App() {
   return (
     <>
       <Wrapper>
-        {/* <Login /> */}
-        <Registration />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
+        </Routes>
       </Wrapper>
-      {/* <BrowserRouter> */}
-      <Routes>
-        <Route path="login" element={<Login />} />
-        <Route path="registration" element={<Registration />} />
-      </Routes>
-      {/* </BrowserRouter> */}
     </>
   );
 }

@@ -130,7 +130,7 @@ const Registration = (props) => {
             <Paragraph className={styles.field__register__regist}>
               Are you already registered?
               <Button className={styles.button__register} type="link">
-                <Link to="/login">Log In</Link>
+                <Link to="/">Log In</Link>
               </Button>
             </Paragraph>
           </Form.Item>

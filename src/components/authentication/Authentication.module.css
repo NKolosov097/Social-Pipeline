@@ -1,0 +1,96 @@
+/* Total options */
+/* input {
+    padding: 20px;
+    background: transparent !important;
+    font-size: 17px !important;
+    color: #fff !important;
+} */
+
+label {
+    margin: 10px 0;
+    font-size: 17px !important;
+    color: rgb(200, 200, 200) !important;
+}
+
+.container {
+    margin-right: 60px;
+}
+
+
+/* Wrapper form */
+.wrapper__form {
+    width: 100%;
+    min-height: 100vh;
+    margin: 10px auto;
+    position: relative;
+  
+    align-items: center;
+    justify-content: center;
+  
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+/* Info block */
+  .info__item {
+    text-align: center;
+    justify-content: center;
+  }
+  
+
+  /* Authentication block */  
+  .wrapper__input {
+    overflow: hidden;
+  }
+
+  .form__input {    
+    padding: 14px;
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  .checkbox {
+    margin: -12px;
+  }
+
+  .authentication__submit__reg {
+    left: -45px;
+    color: #222;
+    padding: 10px 45px 50px;
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+
+    transition: all 300ms ease;
+    }
+
+  /* .authentication__submit:hover {
+    color: #000 !important;
+    background: rgb(200, 200, 200) !important;
+  }
+
+  .authentication__submit:active {
+    color: #222 !important;
+    background: rgb(200, 200, 200) !important;
+  }
+
+  .authentication__submit::selection {
+    color: #222 !important;
+    background: rgb(200, 200, 200) !important;
+  }  Не работает :( */
+
+
+  /* Media requests */
+  @media (max-width: 775px) {
+    .container {
+        margin-right: 70px;
+    }
+
+    .wrapper__form {
+        top: -160px;
+        left: 40px;
+    }
+}
+
+  

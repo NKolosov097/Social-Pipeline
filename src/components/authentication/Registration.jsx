@@ -26,7 +26,7 @@ const Registration = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container__for__aut}>
         <Form labelWrap="true" className={styles.wrapper__form}>
           <Info>
             <Form.Item
@@ -137,7 +137,7 @@ const Registration = () => {
                   offset: 9,
                 }}
               >
-                <ButtonReg size="large" type="text" htmlType="submit">
+                <ButtonReg size="large" type="text" htmlType="submit" href="/main">
                   Register
                 </ButtonReg>
               </Form.Item>

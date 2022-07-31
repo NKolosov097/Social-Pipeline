@@ -5,6 +5,8 @@ import './index.css';
 
 import Login from './components/authentication/Login.jsx';
 import Registration from './components/authentication/Registration.jsx';
+import Main from './components/mainPageOfApp/Main';
+import Counter from './components/authentication/Counter';
 import { Routes, Route, Navigate } from 'react-router';
 
 const Wrapper = styled.section`
@@ -21,8 +23,10 @@ function App() {
     <>
       <Wrapper>
         <Routes>
+          <Route path="/main" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/counter" element={<Counter />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
           <Route path="/" element={<Navigate to="/login" replace />} />
         </Routes>

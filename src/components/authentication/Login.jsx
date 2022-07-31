@@ -12,7 +12,6 @@ import {
   LinkAut,
 } from '../styled.jsx';
 import styles from './Authentication.module.css';
-// import { Link } from 'react-router-dom';
 
 const { Title, Paragraph } = Typography;
 
@@ -27,7 +26,7 @@ const Login = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container__for__aut}>
         <Form labelWrap="true" className={styles.wrapper__form}>
           <Info>
             <Form.Item
@@ -118,7 +117,7 @@ const Login = () => {
                   offset: 9,
                 }}
               >
-                <Button size="large" type="text" htmlType="submit">
+                <Button size="large" type="text" htmlType="submit" href="/counter">
                   Log In
                 </Button>
               </Form.Item>

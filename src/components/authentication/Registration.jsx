@@ -1,23 +1,21 @@
 import React from 'react';
-import { Typography, Form, Col, Row, Input, Checkbox } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import { Button, Checkbox, Form, Input, Col, Row } from 'antd';
 import {
-  ButtonReg,
-  Info,
   InfoContainer,
-  FormAutReg,
+  Info,
+  FormAut,
+  InfoTitle,
   FieldRegisterReg,
   ButtonRegister,
-  LinkAut,
-  InputAut,
 } from '../styled.jsx';
 import styles from './Authentication.module.css';
+import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
 
-const { Title, Paragraph } = Typography;
-
-const Registration = () => {
+export const Registration = ({ handleAuth }) => {
   const onFinish = (values) => {
     console.log('Success:', values);
+    handleAuth();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -43,8 +41,8 @@ const Registration = () => {
                 <InfoContainer>
                   <Col offset="0">
                     <Form.Item className={styles.info__item}>
-                      <Title level={1}>Registration</Title>
-                      <Title level={2}>Welcome to the Social Pipeline!</Title>
+                      <InfoTitle level={1}>Registration</InfoTitle>
+                      <InfoTitle level={2}>Welcome to the Social Pipeline!</InfoTitle>
                     </Form.Item>
                   </Col>
                 </InfoContainer>
@@ -54,108 +52,81 @@ const Registration = () => {
               </Row>
             </Form.Item>
           </Info>
-          <FormAutReg>
+          <FormAut
+            name="normal_login"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
+          >
             <Form.Item
-              name="basic"
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Email!',
+                },
+              ]}
             >
-              <Form.Item
-                label="Email"
-                name="Email"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your Email!',
-                  },
-                ]}
-              >
-                <Row offset="24">
-                  <InputAut
-                    placeholder="Your Email..."
-                    size="large"
-                    autoComplete="new-email"
-                    className={styles.form__input}
-                  />
-                </Row>
-              </Form.Item>
-              <Form.Item
-                label="Username"
-                name="username"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your username!',
-                  },
-                ]}
-              >
-                <Row offset="24">
-                  <InputAut
-                    placeholder="Your username..."
-                    size="large"
-                    autoComplete="new-username"
-                    className={styles.form__input}
-                  />
-                </Row>
-              </Form.Item>
-
-              <Form.Item
-                label="Password"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your password!',
-                  },
-                ]}
-              >
-                <Input.Password
-                  placeholder="Your password..."
-                  iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                  size="large"
-                  className={styles.form__input}
-                />
-              </Form.Item>
-
-              <Form.Item
-                name="remember"
-                valuePropName="checked"
-                wrapperCol={{
-                  offset: 8,
-                  span: 16,
-                }}
-              >
-                <Checkbox className={styles.checkbox}>Remember me</Checkbox>
-              </Form.Item>
-
-              <Form.Item
-                wrapperCol={{
-                  offset: 9,
-                }}
-              >
-                <ButtonReg size="large" type="text" htmlType="submit" href="/main">
-                  Register
-                </ButtonReg>
-              </Form.Item>
-
-              <Paragraph>
-                <FieldRegisterReg>
-                  Are you already registered?
-                  <ButtonRegister>
-                    <LinkAut to="/login">Log In</LinkAut>
-                  </ButtonRegister>
-                </FieldRegisterReg>
-              </Paragraph>
+              <Input prefix={<MailOutlined />} placeholder="Email" />
             </Form.Item>
-          </FormAutReg>
+            <Form.Item
+              name="username"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Username!',
+                },
+              ]}
+            >
+              <Input prefix={<UserOutlined />} placeholder="Username" />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Password!',
+                },
+              ]}
+            >
+              <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
+            </Form.Item>
+            <Form.Item
+              name="confirm__password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please confirm Password!',
+                },
+              ]}
+            >
+              <Input
+                prefix={<LockOutlined />}
+                type="password"
+                placeholder="Confirm your password"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Form.Item name="remember" valuePropName="checked" noStyle>
+                <Checkbox>Remember me</Checkbox>
+              </Form.Item>
+            </Form.Item>
+
+            <Form.Item>
+              <Button type="primary" htmlType="submit" href="/main">
+                Register
+              </Button>
+              <FieldRegisterReg>
+                Are you already registered?
+                <ButtonRegister>
+                  <Link to="/login">Log in</Link>
+                </ButtonRegister>
+              </FieldRegisterReg>
+            </Form.Item>
+          </FormAut>
         </Form>
       </div>
     </>
   );
 };
-
-export default Registration;

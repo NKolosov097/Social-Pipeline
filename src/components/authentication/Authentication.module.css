@@ -1,18 +1,11 @@
-/* Total options */
-/* input {
-    padding: 20px;
-    background: transparent !important;
-    font-size: 17px !important;
-    color: #fff !important;
-} */
-
+Total options
 label {
     margin: 10px 0;
     font-size: 17px !important;
     color: rgb(200, 200, 200) !important;
 }
 
-.container {
+.container__for__aut {
     margin-right: 60px;
 }
 
@@ -50,35 +43,31 @@ label {
     border-radius: 10px;
   }
 
+  .input__username {
+    padding: 5px 0 !important;
+  }
+
+  .forgot__password {
+    float: right;
+  }
+
   .checkbox {
     margin: -12px;
   }
 
-  .authentication__submit__reg {
-    left: -45px;
-    color: #222;
-    padding: 10px 45px 50px;
-    display: block;
-    cursor: pointer;
-    font-size: 25px;
+  .formForCounter {
+    text-align: center;
+    align-items: center;
 
-    transition: all 300ms ease;
-    }
-
-  /* .authentication__submit:hover {
-    color: #000 !important;
-    background: rgb(200, 200, 200) !important;
+    padding: 40px;
+    background: #222;
+    border-radius: 20px;
   }
 
-  .authentication__submit:active {
-    color: #222 !important;
-    background: rgb(200, 200, 200) !important;
+  .titleCounter {
+    color: #fff !important;
+    font-size: 35px !important;
   }
-
-  .authentication__submit::selection {
-    color: #222 !important;
-    background: rgb(200, 200, 200) !important;
-  }  Не работает :( */
 
 
   /* Media requests */

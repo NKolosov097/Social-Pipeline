@@ -1,23 +1,14 @@
 import React from 'react';
-import { Typography, Form, Col, Row, Input, Checkbox } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import {
-  InputAut,
-  Button,
-  Info,
-  InfoContainer,
-  FormAut,
-  FieldRegister,
-  ButtonLink,
-  LinkAut,
-} from '../styled.jsx';
+import { Link } from 'react-router-dom';
+import { Button, Checkbox, Form, Input, Col, Row } from 'antd';
+import { InfoContainer, Info, FormAut, InfoTitle, FieldRegister, ButtonLink } from '../styled.jsx';
 import styles from './Authentication.module.css';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 
-const { Title, Paragraph } = Typography;
-
-const Login = () => {
+export const Login = ({ handleAuth }) => {
   const onFinish = (values) => {
     console.log('Success:', values);
+    handleAuth();
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -43,8 +34,8 @@ const Login = () => {
                 <InfoContainer>
                   <Col offset="0">
                     <Form.Item className={styles.info__item}>
-                      <Title level={1}>Log In</Title>
-                      <Title level={2}>Welcome to the Social Pipeline!</Title>
+                      <InfoTitle level={1}>Log In</InfoTitle>
+                      <InfoTitle level={2}>Welcome to the Social Pipeline!</InfoTitle>
                     </Form.Item>
                   </Col>
                 </InfoContainer>
@@ -54,84 +45,55 @@ const Login = () => {
               </Row>
             </Form.Item>
           </Info>
-          <FormAut>
+          <FormAut
+            name="normal_login"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
+          >
             <Form.Item
-              initialValues={{
-                remember: true,
-              }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
+              name="username"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Username!',
+                },
+              ]}
             >
-              <Form.Item
-                label="Username"
-                name="username"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your username!',
-                  },
-                ]}
-              >
-                <Row offset="24">
-                  <InputAut
-                    placeholder="Your username..."
-                    size="large"
-                    autoComplete="new-username"
-                    className={styles.form__input}
-                  />
-                </Row>
+              <Input prefix={<UserOutlined />} placeholder="Username" />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your Password!',
+                },
+              ]}
+            >
+              <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
+            </Form.Item>
+            <Form.Item>
+              <Form.Item name="remember" valuePropName="checked" noStyle>
+                <Checkbox>Remember me</Checkbox>
               </Form.Item>
 
-              <Form.Item
-                label="Password"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your password!',
-                  },
-                ]}
-              >
-                <Input.Password
-                  placeholder="Your password..."
-                  iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                  size="large"
-                  className={styles.form__input}
-                />
-              </Form.Item>
+              <a className="login-form-forgot" href="true">
+                Forgot password
+              </a>
+            </Form.Item>
 
-              <Form.Item
-                name="remember"
-                valuePropName="checked"
-                wrapperCol={{
-                  offset: 8,
-                  span: 16,
-                }}
-              >
-                <Checkbox className={styles.checkbox}>Remember me</Checkbox>
-              </Form.Item>
-
-              <Form.Item
-                wrapperCol={{
-                  offset: 9,
-                }}
-              >
-                <Button size="large" type="text" htmlType="submit" href="/counter">
-                  Log In
-                </Button>
-              </Form.Item>
-
-              <Paragraph>
-                <FieldRegister>
-                  Are you a new user?
-                  <ButtonLink>
-                    <LinkAut className={styles.ButtonLink} to="/registration">
-                      Register
-                    </LinkAut>
-                  </ButtonLink>
-                </FieldRegister>
-              </Paragraph>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" href="/counter">
+                Log in
+              </Button>
+              <FieldRegister>
+                Are you a new user?
+                <ButtonLink>
+                  <Link to="/registration">Register</Link>
+                </ButtonLink>
+              </FieldRegister>
             </Form.Item>
           </FormAut>
         </Form>
@@ -139,5 +101,3 @@ const Login = () => {
     </>
   );
 };
-
-export default Login;

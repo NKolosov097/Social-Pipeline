@@ -4,7 +4,7 @@ import { Button, ButtonCounterToHome, ButtonCounterIncDec } from '../styled.jsx'
 import styles from './Authentication.module.css';
 const { Title } = Typography;
 
-const Counter = (props) => {
+export const Counter = (props) => {
   const [counter, setCounter] = useState(0);
 
   //   const handleClick1 = () => {
@@ -43,5 +43,3 @@ const Counter = (props) => {
     </>
   );
 };
-
-export default Counter;

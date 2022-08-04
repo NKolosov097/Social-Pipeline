@@ -4,12 +4,17 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
 ul {
     padding: 0;
+    margin-bottom: 0;
 }
 
 li {
@@ -18,11 +23,14 @@ li {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 
-    padding: 0 15px;
+    padding: 0 5px;
 }
+
+
+/* === HEADER === */
 
 .header {
     height: 70px;
@@ -32,13 +40,17 @@ li {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 1px solid #515369;
 }
 
 .header__inner {
     display: flex;
     justify-content: space-between;
-    padding: 0 0 30px;
+    align-items: center;
+    padding-right: 10px;;
+
+    border: 1px solid #515369;
+    border-top: 0px;
+    border-radius: 20px;
 }
 
 .wrapper__header__logo {
@@ -47,13 +59,85 @@ li {
     justify-content: center;
 }
 
+.header__logo__link {
+    margin: 15px;
+}
+
 .header__logo__img {
-    margin: 20px;
+    display: inline-block;
 }
 
 .header__logo__text {
     text-decoration: none;
     font-size: 20px;
-    padding: 10px;
+    padding: 10px 0;
+    margin: 10px 0;
 }
 
+.header__nav__list {
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+
+    text-transform: uppercase;
+}
+
+.header__nav__item {
+    margin: 0 5px;
+}
+
+.header__nav__link {
+    font-size: 15px;
+    color: #fff;
+    opacity: .75;
+
+    text-decoration: none;
+    transition: opacity 0.1s linear;
+    margin: 0 10px;
+}
+
+.header__nav__link:hover {
+    opacity: 1;
+}
+
+
+/* === MENU === */
+.wrapper__menu {
+    position: absolute;
+    display: flex;
+    max-width: 300px;
+    width: 100%;
+    top: 70px;
+    left: calc((100vw - 1400px + 20px) / 2);
+
+    height: 700px;
+    margin: 0 auto;
+    padding: 0 5px;
+
+    border: 1px solid #515369;
+    border-top: 0;
+    border-radius: 20px;
+}
+
+.menu__profile {
+    padding: 20px;
+}
+
+
+/* === Friends Menu === */
+.wrapper__friends__menu {
+    position: absolute;
+    display: flex;
+    max-width: 300px;
+    width: 100%;
+    top: 70px;
+    right: calc((100vw - 1400px) / 2);
+
+    height: 700px;
+    margin: 0 auto;
+    padding: 0 5px;
+
+    border: 1px solid #515369;
+    border-top: 0;
+    border-radius: 20px;
+}

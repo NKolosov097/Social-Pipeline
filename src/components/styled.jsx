@@ -1,17 +1,6 @@
 import styled from 'styled-components';
-import { Button as ButtonLib, Input, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button as ButtonLib, Typography } from 'antd';
 const { Title } = Typography;
-
-export const InputAut = styled(Input)`
-  background: #222;
-  font-size: 17px;
-  color: #fff;
-
-  @media (max-width: 775px) {
-    font-size: 20px;
-  }
-`;
 
 export const InfoTitle = styled(Title)`
   color: rgb(230, 230, 230) !important;
@@ -163,12 +152,6 @@ export const FormAutReg = styled.div`
   @media (max-width: 376px) {
     top: 420px;
   }
-`;
-
-export const FormInput = styled.div`
-  padding: 14px;
-  background: transparent;
-  border-radius: 10px;
 `;
 
 export const FieldRegister = styled.div`

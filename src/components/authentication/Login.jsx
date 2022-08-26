@@ -85,9 +85,11 @@ export const Login = ({ handleAuth }) => {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" href="/counter">
-                Log in
-              </Button>
+              <Link to="/counter">
+                <Button type="primary" htmlType="submit">
+                  Log in
+                </Button>
+              </Link>
               <FieldRegister>
                 Are you a new user?
                 <ButtonLink>

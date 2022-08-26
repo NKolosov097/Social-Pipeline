@@ -114,9 +114,11 @@ export const Registration = ({ handleAuth }) => {
             </Form.Item>
 
             <Form.Item>
-              <Button type="primary" htmlType="submit" href="/main">
-                Register
-              </Button>
+              <Link to="/main">
+                <Button type="primary" htmlType="submit">
+                  Register
+                </Button>
+              </Link>
               <FieldRegisterReg>
                 Are you already registered?
                 <ButtonRegister>

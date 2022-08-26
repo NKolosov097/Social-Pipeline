@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SvgHeader } from './SvgHeader';
 import styles from './Main.module.css';
 
-import { Friend } from './friends/Friend';
 import { Features } from './Features';
 import { Description } from './Description';
 import { FriendList } from './friends/FriendList';
@@ -15,9 +15,9 @@ export const Main = () => {
           <div className={styles.container}>
             <nav className={styles.header__inner}>
               <div className={styles.wrapper__header__logo}>
-                <a className={styles.header__logo__link} href="true">
+                <Link className={styles.header__logo__link} to="/counter">
                   <span className={styles.header__logo__text}>Social Pipeline</span>
-                </a>
+                </Link>
               </div>
               <ul className={styles.header__nav__list}>
                 <li className={styles.header__nav__item}>

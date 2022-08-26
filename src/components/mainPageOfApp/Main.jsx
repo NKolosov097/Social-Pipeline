@@ -2,205 +2,140 @@ import React from 'react';
 import { SvgHeader } from './SvgHeader';
 import styles from './Main.module.css';
 
+import { Friend } from './friends/Friend';
+import { Features } from './Features';
+import { Description } from './Description';
+import { FriendList } from './friends/FriendList';
+
 export const Main = () => {
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <nav className={styles.header__inner}>
-            <div className={styles.wrapper__header__logo}>
-              <a className={styles.header__logo__link} href="true">
-                <div className={styles.header__logo__img}>
-                  <SvgHeader id="logo" />
-                </div>
-                <span className={styles.header__logo__text}> Social Pipeline</span>
-              </a>
-            </div>
-            <ul className={styles.header__nav__list}>
-              <li className={styles.header__nav__item}>
-                <a
-                  className={styles.header__nav__link}
-                  href="../../components/authentication/Login.jsx"
-                >
-                  <SvgHeader id="addFriends" />
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <div className={styles.container}>
+            <nav className={styles.header__inner}>
+              <div className={styles.wrapper__header__logo}>
+                <a className={styles.header__logo__link} href="true">
+                  <span className={styles.header__logo__text}>Social Pipeline</span>
                 </a>
-              </li>
-              <li className={styles.header__nav__item}>
-                <a className={styles.header__nav__link} href="true">
-                  <SvgHeader id="notifications" />
-                </a>
-              </li>
-              <li className={styles.header__nav__item}>
-                <a className={styles.header__nav__link} href="true">
-                  <SvgHeader id="profile" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      <section className={styles.container}>
-        <div className={styles.wrapper__menu}>
+              </div>
+              <ul className={styles.header__nav__list}>
+                <li className={styles.header__nav__item}>
+                  <a
+                    className={styles.header__nav__link}
+                    href="../../components/authentication/Login.jsx"
+                  >
+                    <SvgHeader id="addFriends" />
+                  </a>
+                </li>
+                <li className={styles.header__nav__item}>
+                  <a className={styles.header__nav__link} href="true">
+                    <SvgHeader id="notifications" />
+                  </a>
+                </li>
+                <li className={styles.header__nav__item}>
+                  <a className={styles.header__nav__link} href="true">
+                    <SvgHeader id="profile" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>{' '}
+        {/* ./header */}
+        <section className={styles.wrapper__menu}>
           <nav className={styles.menu__inner}>
-            <a className={styles.menu__profile} href="true">
-              Profile
+            <a className={styles.menu__item} href="true">
+              {' '}
+              {/*className={styles.menu__profile}*/}
+              <a className={styles.menu__link} href="true">
+                <span className={styles.menu__content__title}>Profile</span>
+              </a>
             </a>
             <ul className={styles.menu__list}>
-              <li className={styles.nmenu__item}>
+              <li className={styles.menu__item}>
                 <a className={styles.menu__link} href="true">
-                  Feed
+                  {/* <img className={styles.menu__content__img} src="true" alt='icon' /> */}
+                  <span className={styles.menu__content__title}>Feed</span>
                 </a>
               </li>
               <li className={styles.menu__item}>
                 <a className={styles.menu__link} href="true">
-                  Friends
+                  {/* <img className={styles.menu__content__img} src="true" alt='icon' /> */}
+                  <span className={styles.menu__content__title}>Friends</span>
                 </a>
               </li>
               <li className={styles.menu__item}>
                 <a className={styles.menu__link} href="true">
-                  Event
+                  {/* <img className={styles.menu__content__img} src="true" alt='icon' /> */}
+                  <span className={styles.menu__content__title}>Event</span>
                 </a>
               </li>
               <li className={styles.menu__item}>
                 <a className={styles.menu__link} href="true">
-                  Videos
+                  {/* <img className={styles.menu__content__img} src="true" alt='icon' /> */}
+                  <span className={styles.menu__content__title}>Videos</span>
                 </a>
               </li>
               <li className={styles.menu__item}>
                 <a className={styles.menu__link} href="true">
-                  Photos
+                  {/* <img className={styles.menu__content__img} src="true" alt='icon' /> */}
+                  <span className={styles.menu__content__title}>Photos</span>
                 </a>
               </li>
               <li className={styles.menu__item}>
                 <a className={styles.menu__link} href="true">
-                  Music
+                  {/* <img className={styles.menu__content__img} src="true" alt='icon' /> */}
+                  <span className={styles.menu__content__title}>Music</span>
                 </a>
               </li>
             </ul>
           </nav>
-        </div>
-      </section>
-
-      <section className={styles.container}>
-        <div className={styles.wrapper__friends__menu}>
+        </section>{' '}
+        {/* ./wrapper__menu */}
+        <section className={styles.wrapper__main__area}>
+          <div className={styles.header__main__area}>
+            <div className={styles.wrapper__avatar}>
+              <img src="true" alt="avatar" />
+            </div>
+            <div className={styles.main__header__info}>
+              <div className={styles.main_header__fullname}>Kolosov Nikita</div>
+              <Features age={'19'} post={'Student'} />
+              <Description description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text" />
+            </div>
+          </div>
+        </section>{' '}
+        {/* ./wrapper__main__area */}
+        <section className={styles.wrapper__friends__menu}>
           <nav className={styles.friends__menu___inner}>
             <ul className={styles.friends__menu__list}>
-              <li className={styles.friends__menup__item}>
-                <ul className={styles.favorite__friends} href="true">
-                  Favorite Friends
-                  <li className={styles.favorite__friends__item}>
-                    <a className={styles.favorite__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.favorite__friends__avatar} />
-                      <div className={styles.favorite__friends__full__name}>Kolosov Nikita</div>
-                    </a>
-                  </li>
-                  <li className={styles.favorite__friends__item}>
-                    <a className={styles.favorite__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.favorite__friends__avatar} />
-                      <div className={styles.favorite__friends__full__name}>Emelyanov Dmitry</div>
-                    </a>
-                  </li>
-                  <li className={styles.favorite__friends__item}>
-                    <a className={styles.favorite__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.favorite__friends__avatar} />
-                      <div className={styles.favorite__friends__full__name}>Shirley Garcia</div>
-                    </a>
-                  </li>
-                  <li className={styles.favorite__friends__item}>
-                    <a className={styles.favorite__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.favorite__friends__avatar} />
-                      <div className={styles.favorite__friends__full__name}>Scott Oliver</div>
-                    </a>
-                  </li>
-                </ul>
+              <li className={styles.friends__menu__item}>
+                <FriendList
+                  title="Favorite Friends"
+                  friends={['Kolosov Nikita', 'Emelyanov Dmitry', 'Shirley Garcia', 'Scott Oliver']}
+                />
               </li>
               <li className={styles.friends__menup__item}>
                 <ul className={styles.friends__menu__link} href="true">
-                  Friends Online
-                  <li className={styles.online__friends__item}>
-                    <a className={styles.online__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.online__friends__avatar} />
-                      <div className={styles.online__friends__full__name}>Harold Clark</div>
-                    </a>
-                  </li>
-                  <li className={styles.online__friends__item}>
-                    <a className={styles.online__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.online__friends__avatar} />
-                      <div className={styles.online__friends__full__name}>Jennifer Ortiz</div>
-                    </a>
-                  </li>
-                  <li className={styles.online__friends__item}>
-                    <a className={styles.online__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.online__friends__avatar} />
-                      <div className={styles.online__friends__full__name}>Anna Taylor</div>
-                    </a>
-                  </li>
-                  <li className={styles.online__friends__item}>
-                    <a className={styles.online__friends__link} href="true">
-                      <img src="true" alt="avatar" className={styles.online__friends__avatar} />
-                      <div className={styles.online__friends__full__name}>John Hicks</div>
-                    </a>
-                  </li>
+                  <FriendList
+                    title="Friends Online"
+                    friends={['Harold Clark', 'Anna Taylor', 'John Hicks', 'Asap Rocky']}
+                  />
                 </ul>
               </li>
               <li className={styles.friends__menu__item}>
                 <ul className={styles.friends__menu__link} href="true">
-                  Have been online recently
-                  <li className={styles.online__recently__friends__item}>
-                    <a className={styles.online__recently__friends__link} href="true">
-                      <img
-                        src="true"
-                        alt="avatar"
-                        className={styles.online__recently__friends__avatar}
-                      />
-                      <div className={styles.online__recently__friends__full__name}>
-                        William Potter
-                      </div>
-                    </a>
-                  </li>
-                  <li className={styles.online__recently__friends__item}>
-                    <a className={styles.online__recently__friends__link} href="true">
-                      <img
-                        src="true"
-                        alt="avatar"
-                        className={styles.online__recently__friends__avatar}
-                      />
-                      <div className={styles.online__recently__friends__full__name}>
-                        Mark Nelson
-                      </div>
-                    </a>
-                  </li>
-                  <li className={styles.online__recently__friends__item}>
-                    <a className={styles.online__recently__friends__link} href="true">
-                      <img
-                        src="true"
-                        alt="avatar"
-                        className={styles.online__recently__friends__avatar}
-                      />
-                      <div className={styles.online__recently__friends__full__name}>
-                        James Gibson
-                      </div>
-                    </a>
-                  </li>
-                  <li className={styles.online__recently__friends__item}>
-                    <a className={styles.online__recently__friends__link} href="true">
-                      <img
-                        src="true"
-                        alt="avatar"
-                        className={styles.online__recently__friends__avatar}
-                      />
-                      <div className={styles.online__recently__friends__full__name}>
-                        Mary Bennett
-                      </div>
-                    </a>
-                  </li>
+                  <FriendList
+                    title="Have been online recently"
+                    friends={['Harry Potter', 'Mark Nelson', 'James Gibson', 'Mary Bennett']}
+                  />
                 </ul>
               </li>
             </ul>
           </nav>
-        </div>
-      </section>
+        </section>{' '}
+        {/* ./wrapper__friends__menu */}
+      </div>
     </>
   );
 };

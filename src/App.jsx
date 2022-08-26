@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import 'antd/dist/antd.min.css';
 import './index.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router';
 
 import { Login } from './components/authentication/Login.jsx';
 import { Registration } from './components/authentication/Registration.jsx';
-import { Main } from './components/mainPageOfApp/Main';
+import { Main } from './components/mainPageOfApp/Main.jsx';
 import { Counter } from './components/authentication/Counter';
 
 const Wrapper = styled.section`

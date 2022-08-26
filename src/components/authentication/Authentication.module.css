@@ -2,7 +2,7 @@ Total options
 label {
     margin: 10px 0;
     font-size: 17px !important;
-    color: rgb(200, 200, 200) !important;
+    color: #edf2f4 !important;
 }
 
 .container__for__aut {
@@ -60,7 +60,7 @@ label {
     align-items: center;
 
     padding: 40px;
-    background: #222;
+    background: #2b2d42;
     border-radius: 20px;
   }
 

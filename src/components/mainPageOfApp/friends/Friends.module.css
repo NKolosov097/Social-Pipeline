@@ -1,0 +1,130 @@
+/* === Friends Menu === */
+.status__online {
+    width: 10px;
+    height: 10px;
+
+    background: green;
+    border-radius: 50%;
+}
+
+.online__time {
+ color: #2b2d42;   
+}
+
+.wrapper__friends__menu {
+    position: absolute;
+    display: flex;
+    max-width: 300px;
+    width: 100%;
+    top: 60px;
+    right: 0;
+    height: 700px;
+    padding: 0 5px;
+
+    color: #2b2d42;
+    background: #edf2f4;
+    border: 1px solid #2b2d42;
+    border-top: 0;
+    border-radius: 20px;
+}
+
+.friends__menu___inner {
+    width: 100%;
+}
+
+.friends__menu__list {
+    margin: 10px 20px;
+}
+
+/* .friends__menu___item {
+    text-align: center;
+    align-items: center;
+} */
+
+.favorite__friends {
+  color: #2b2d42;
+}
+
+.favorite__friends__item {
+    margin: 10px;
+}
+
+.favorite__friends__avatar {
+    display: inline-block;
+
+    text-align: center;
+    align-items: center;
+    top: 50%;
+
+    font-size: 8px;
+    width: 35px;
+    height: 35px;
+
+    color: #2b2d42;
+    padding: 0 5px;
+    border: 1px solid #2b2d42;
+    border-radius: 50%;
+}
+
+.favorite__friends__full__name {
+    display: inline-block;
+
+    color: #2b2d42;
+    padding: 0 5px; 
+}
+
+.online__friends__link {
+    text-decoration: none;
+    display: flex;
+}
+
+.online__friends__avatar {
+    display: inline-block;
+
+    text-align: center;
+    align-items: center;
+    top: 50%;
+
+    font-size: 8px;
+    width: 35px;
+    height: 35px;
+
+    padding: 0 5px;
+    border: 1px solid #2b2d42;
+    border-radius: 50%;
+}
+
+.online__friends__full__name {
+    display: inline-block;
+
+    padding: 0 5px; 
+}
+
+.online__recently__friends__avatar {
+    display: inline-block;
+
+    text-align: center;
+    align-items: center;
+    top: 50%;
+
+    font-size: 8px;
+    width: 35px;
+    height: 35px;
+
+    padding: 0 5px;
+    border: 1px solid #2b2d42;
+    border-radius: 50%;
+}
+
+.online__recently__friends__full__name {
+    display: inline-block;
+
+    padding: 0 5px; 
+}
+
+.online__time {
+    position: absolute;
+    right: 0;
+
+    padding: 5px 10px;
+}

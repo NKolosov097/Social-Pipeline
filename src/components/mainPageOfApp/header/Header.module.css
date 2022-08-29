@@ -1,0 +1,72 @@
+/* === HEADER === */
+.header {
+    height: 70px;
+    width: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;;
+
+    background: #edf2f4;
+    border: 1px solid #2b2d42;
+    border-top: 0px;
+    border-radius: 20px;
+}
+
+.wrapper__header__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo__link {
+    margin: 15px;
+}
+
+.header__logo__img {
+    display: inline-block;
+}
+
+.header__logo__text {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 0;
+    margin: 10px 0;
+
+    color: #2b2d42;
+}
+
+.header__nav__list {
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+
+    text-transform: uppercase;
+}
+
+.header__nav__item {
+    margin: 0 5px;
+}
+
+.header__nav__link {
+    font-size: 15px;
+    color: #2b2d42;
+    opacity: .75;
+
+    text-decoration: none;
+    transition: opacity 0.1s linear;
+    margin: 0 10px;
+}
+
+.header__nav__link:hover {
+    opacity: 1;
+}
+

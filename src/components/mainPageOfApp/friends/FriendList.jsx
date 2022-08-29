@@ -1,13 +1,17 @@
 import React from 'react';
-import styles from '../Main.module.css';
-import { Friend } from './Friend';
+import styles from './Friends.module.css';
+import { FriendItem } from './FriendItem';
 
-export const FriendList = (props) => {
+export const FriendList = ({ title, friends }) => {
   return (
-    <ul className={styles.favorite__friends} href="true">
-      {props.title}
-      {props.friends.length > 0 &&
-        props.friends.map((friend) => <Friend fullName={friend} timeOnline="10 min" />)}
+    <ul
+      className={styles.favorite__friends}
+      href="true"
+      key={`${title}-${friends.forEach((friend) => friend)}`}
+    >
+      {title}
+      {friends.length > 0 &&
+        friends.map((friend) => <FriendItem fullName={friend} timeOnline="10 min" />)}
     </ul>
   );
 };

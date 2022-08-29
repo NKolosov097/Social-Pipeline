@@ -6,7 +6,7 @@ import { Routes, Route, Navigate } from 'react-router';
 
 import { Login } from './components/authentication/Login.jsx';
 import { Registration } from './components/authentication/Registration.jsx';
-import { Main } from './components/mainPageOfApp/Main.jsx';
+import { Main } from './components/mainPageOfApp/main/Main.jsx';
 import { Counter } from './components/authentication/Counter';
 
 const Wrapper = styled.section`

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../Main.module.css';
+import styles from './Friends.module.css';
 
-export const Friend = (props) => {
+export const FriendItem = (props) => {
   return (
     <li className={styles.favorite__friends__item}>
       <a className={styles.favorite__friends__link} href="true">

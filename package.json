@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint"
     }
   },
   "proxy": "http://localhost:4000",

@@ -18,7 +18,7 @@ export const Registration = ({ handleAuth }) => {
     handleAuth();
   };
 
-  const onFinishFailid = (errorInfo) => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
 

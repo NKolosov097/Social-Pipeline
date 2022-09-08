@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "server": "nodemon mock/server.js",
     "test": "react-scripts test",
-    "lint": "./node_modules/.bin/eslint . --ext .js,.jsx"
+    "lint": "./node_modules/.bin/eslint . --ext .js,.jsx --max-warnings=0"
   },
   "husky": {
     "hooks": {

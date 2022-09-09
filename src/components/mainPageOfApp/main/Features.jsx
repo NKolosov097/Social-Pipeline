@@ -16,11 +16,11 @@ export const Features = ({ gender, age, post }) => {
   return (
     <div className={styles.main__header__features}>
       <span className={styles.features__gender}>gender: {gender || 'penguin'}</span>
-      {/* {age ? (
+      {age ? (
         <span className={styles.features__age}>age: {age}</span>
       ) : (
         <Spin indicator={antIcon} />
-      )} */}
+      )}
       {post.length > 0 ? <span className={styles.features__post}>post: {post}</span> : null}
     </div>
   );

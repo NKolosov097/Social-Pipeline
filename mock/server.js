@@ -1,21 +1,15 @@
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
-
 const app = express();
-
 const PORT = process.env.PORT ?? 4000;
 
 app.use(express.json());
 app.use(cors());
 
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
-app.use('', createProxyMiddleware({ target: 'http://localhost:3000', changeOrigin: true }));
-
 app.use(express.static(path.resolve(__dirname, '..', 'dist')));
 
-app.get('/api/main', async (req, res) => {
+app.get('/api/v1/person', async (req, res) => {
   await new Promise((res) => {
     setTimeout(() => {
       res();
@@ -23,10 +17,12 @@ app.get('/api/main', async (req, res) => {
   });
 
   res.json({
-    fullName: 'Kolosov Nikita',
+    fullname: 'Kolosov Nikita',
     age: '19',
-    nickName: 'shadow123',
-    birthDate: '04.09.2000',
+    post: 'Sudent',
+    gender: 'Man',
+    nickname: 'NKolosov097',
+    birthDate: '31.01.2003',
   });
 });
 

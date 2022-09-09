@@ -5,6 +5,8 @@ import { Spin } from 'antd';
 
 import styles from './Main.module.css';
 
+import kolosov_nikita from '../../../images/avatars/KolosovNikita.jpg';
+
 import { Features } from './Features';
 import { Description } from './Description';
 import { Header } from '../header/Header';
@@ -30,11 +32,9 @@ export const Main = () => {
       setError(false);
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:3000/api/main`, { mode: 'no-cors' });
+        const res = await fetch(`/api/v1/person`, { mode: 'no-cors' });
         const data = await res.json();
-        // hhtps://localhost:600/api/main
         setData(data);
-        console.log(data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -46,29 +46,29 @@ export const Main = () => {
   }, []);
 
   return (
-    <>
-      <div className={styles.container}>
-        <Header />
-        <LeftMenu />
+    <div className={styles.container}>
+      <Header />
+      <LeftMenu />
 
-        <section className={styles.wrapper__main__area}>
-          <div className={styles.header__main__area}>
-            <div className={styles.wrapper__avatar}>
-              <img src="true" alt="avatar" />
-            </div>
-            <div className={styles.main__header__info}>
-              <div className={styles.main_header__fullname}>
-                {data ? <span>{data.fullname}</span> : <Spin indicator={antIcon} />}
-                {/* <span>{data.fullname}</span> */}
-              </div>
-              <Features age={data} post={'Student'} />
-              <Description description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text" />
-            </div>
+      <section className={styles.wrapper__main__area}>
+        <div className={styles.header__main__area}>
+          <div className={styles.wrapper__avatar}>
+            <img className={styles.img} src={kolosov_nikita} alt="avatar" align="middle" />
           </div>
-        </section>
+          <div className={styles.main__header__info}>
+            <div className={styles.main_header__fullname}>
+              {data ? <span>{data.fullname}</span> : <Spin indicator={antIcon} />}
+            </div>
+            <div className={styles.main_header__nickname}>
+              {data ? <span>{data.nickname}</span> : <Spin indicator={antIcon} />}
+            </div>
+            <Features gender={data?.gender} age={data?.age} post={'Student'} />
+            <Description description="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text" />
+          </div>
+        </div>
+      </section>
 
-        <Friends />
-      </div>
-    </>
+      <Friends />
+    </div>
   );
 };

@@ -1,4 +1,6 @@
-import React, { useState, Link } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Typography, Form } from 'antd';
 import { Button, ButtonCounterToHome, ButtonCounterIncDec } from '../styled.jsx';
 import styles from './Authentication.module.css';

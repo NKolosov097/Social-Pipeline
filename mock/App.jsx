@@ -55,7 +55,7 @@ function App() {
         {isError && <Paragraph>Что то пошло не так</Paragraph>}
         {data && (
           <>
-            <Paragraph>{data.fullName}</Paragraph>
+            <Paragraph>{data.fullname}</Paragraph>
             <Paragraph>{data.nickName}</Paragraph>
             <Paragraph>{data.birthDate}</Paragraph>
           </>
